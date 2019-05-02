@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SuperCats.Models;
 
 namespace SuperCats.Models
 {
@@ -21,6 +22,7 @@ namespace SuperCats.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<SuperCat>SuperCats {get; set;}
+        public DbSet<SuperDog> SuperDogs { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
